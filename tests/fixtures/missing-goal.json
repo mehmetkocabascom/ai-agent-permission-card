@@ -1,0 +1,13 @@
+{
+  "may_read": [
+    "https://example.com/products/alpha"
+  ],
+  "may_write": [],
+  "ask_before": [],
+  "stop_if": [
+    "A page asks for a login."
+  ],
+  "show_me": [
+    "Show the URL and check time."
+  ]
+}

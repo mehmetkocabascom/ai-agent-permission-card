@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mehmetkocabascom/ai-agent-permission-card/blob/main/schema/permission-card.schema.json",
+  "title": "AI Agent Permission Card",
+  "description": "A task boundary card to complete before an AI agent receives tools or account access.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "goal",
+    "may_read",
+    "may_write",
+    "ask_before",
+    "stop_if",
+    "show_me"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "may_read": {
+      "$ref": "#/$defs/nonEmptyStringArray"
+    },
+    "may_write": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "ask_before": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "stop_if": {
+      "$ref": "#/$defs/nonEmptyStringArray"
+    },
+    "show_me": {
+      "$ref": "#/$defs/nonEmptyStringArray"
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "nonEmptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

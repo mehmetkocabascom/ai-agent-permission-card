@@ -1,0 +1,14 @@
+{
+  "goal": "Describe one verifiable result.",
+  "may_read": [
+    "List each allowed source."
+  ],
+  "may_write": [],
+  "ask_before": [],
+  "stop_if": [
+    "List a condition that stops the run."
+  ],
+  "show_me": [
+    "List the evidence required to prove what happened."
+  ]
+}
